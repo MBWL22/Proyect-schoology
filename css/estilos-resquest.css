@@ -1,0 +1,52 @@
+@font-face{
+    font-family: merry;
+    src: url(fonts/Merryweather-Light.ttf)
+}
+#titulo-1{
+    padding-top: 4%;
+    font-size: 34px;
+    color: #48afec;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-family: merry;
+    font-weight: 400;
+    
+}
+#parrafo-1, #parrafo-2{
+    text-align: center;
+    font-size: 17px;
+    padding-top: 3%;
+}
+#parrafo-2{
+    padding-bottom: 3%;
+}
+boton-s{
+    text-align: center;
+}
+#contenedor-oficial{
+    background-color: #f1f1f1;
+}
+
+#contenedor-total{
+    width: auto;
+    background-color: #f1f1f1;
+}
+#c-boton-submit{
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    
+}
+#btn-submit{
+    width: 120px;
+    height: 46px;
+    border-radius: 5px;
+
+}
+.click{
+    color: #48afec;
+}
+.click:hover{
+    color: #48afec;
+    text-decoration: underline;
+}
