@@ -1,0 +1,125 @@
+.contenedor-izquierdo{
+    margin-top: 20px;
+    padding-left: 3%;
+    float: left;
+    width: 20%;
+    
+}
+.contenedor-derecho{
+    height: 100%;
+    float: left;
+    width: 45%;
+    padding-left: 20px;
+}
+header{
+    width: 100%;
+    height: 60px;
+    background: #0677ba;
+}
+.curso-posicion{
+    margin-top: 10%;
+}
+.icon-custom-4{
+    margin-right: 10px;
+    font-size: 20px;
+    color: gray;
+}
+.icon-custom-4 :hover{
+    color: yellow;
+}
+.icon-curso{
+    font-size: 30px;
+    margin-left: 20px;
+    color: #0677ba;
+}
+.estilo-nombre-curso{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333333;
+}
+#contenido-botones{
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+.contenedor-enlaces-curso{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    color: #333333;
+    font-size: 13px;
+    padding-left: 5%;
+}
+.estilo-boton{
+    padding-left: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #333333;
+    font-weight: 400;
+}
+.icono-asignacion{
+    padding-left: 5px;
+    margin-right: 20px;
+    color: crimson;
+    font-size: 30px;
+}
+.estilo-asignacion{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: #4479b3;
+    font-weight: 700;
+}
+.cont-asignaciones{
+    padding-left: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+.footer-asignaciones{
+    margin-top: 5px;
+    color: #677583;
+    padding-left: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+.logo{
+    padding-left: 5%;
+    margin-top: 10px;
+}
+.nombre-instructor{
+    margin-right: 10px;
+    margin-top: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 700;
+    color: white;
+    float: right;
+}
+.btn-back-home{
+    float: right;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.cont-interno-asignaciones{
+    width: 30%;
+    float: left;
+    background: #0677ba;
+}
+.invitacion-colegas{
+    margin-top: 20px;
+    padding-right: 7%;
+}
+.icon-notificaciones{
+    font-size: 20px;
+    margin-right: 10px;
+    margin-left: 5px;
+}
+.btn-styles{
+    padding-right: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+
+}
+.estilo-nombre-grupo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #4479b3;
+}
