@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home | Schoology</title>
+    <link rel="shortcut icon" href="img/favicon_0.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <script src="fontAwesone/js/all.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/estilos-area-instructor.css" rel="stylesheet">
+    <link href="css/estilos-navbar-oficial.css" rel="stylesheet">
+    <link href="css/estilos-curso-oficial.css" rel="stylesheet">
+    <script defer src="js/fontawesome-all.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <!--Inicio del navbar-->
+  <header>
+        <div id="menu-titular">
+            <div id="anclaje-boton" href="" style="float: right" onclick="visualizar()">
+                <i class="fas fa-bars"></i>
+            </div>
+           <div class="s">Schoology</div>
+           <div> 
+                <a href="#"><div class="icon-o" ><i class="fas fa-search colorY" style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="icon-o"><i class="fas fa-angle-double-down colorY"style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="icon-o"><i class="far fa-calendar-alt colorY"style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="icon-o"><i class="far fa-envelope colorY"style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="icon-o"><i class="far fa-bell colorY"style="color: white; width: 25px; height: 25px;"></i></div></a>
+            </div>
+        </div>
+        
+        <div id="navbar-contenedor">
+                <a href="" class="a-not"><div id="div-imagen"><img src="img/logo.png"></a></div>
+                <div class="posicion-interna">UPGRADE</div>
+                <div class="posicion-interna"  id="click-course">COURSES</div>
+                <div class="posicion-interna"  id="click-group">GROUPS</div>
+                <div class="posicion-interna">RESOURCES</div></a>
+            <div id="div-iconos" style="float: right">
+                    <div class="dropdown" style="float: right">
+                            <button id="btn-dropdown" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Nombre Estudiante
+                            </button>
+                            <div id="dropdown-interno" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item estilo-anchor" href="#">Your Profile</a>
+                              <a class="dropdown-item estilo-anchor" href="#">user school</a>
+                              <a class="dropdown-item estilo-anchor" href="#">Settings</a>
+                              <hr style="border: solid 0.5px; color: white">
+                              <a class="dropdown-item estilo-anchor" href="#">Logout</a>
+                            </div>
+                        </div>
+                <a href="#"><div class="p-interna-derecha"><i class="fas fa-search" style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="p-interna-derecha"><i class="fas fa-angle-double-down"style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="p-interna-derecha"><i class="far fa-calendar-alt"style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="p-interna-derecha"><i class="far fa-envelope"style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="p-interna-derecha"><i class="far fa-bell"style="color: white; width: 25px; height: 25px;"></i></div></a>
+            </div>
+        </div>
+    </header>
+    <!--Fin del navbar-->
+
+    <!--Estructura de la página oficial del área de instructor-->
+    <div id="nav-principal">
+            <ul class="nav nav-tabs">
+               <li class="nav-item">
+                 <a class="nav-link active" href="#">ACTIVIDADES RECIENTES</a>
+               </li>
+               <li class="nav-item">
+                 <a id="anchor-tablero-curso" class="nav-link" href="#">TABLERO DE CURSOS</a>
+               </li>
+           </ul>
+
+       </div> <!--fin del nav principal-->
+       
+            <div id="div-oficial" class="form-control" style="float:left">
+                    <div id="nav-secundario"> <!--Nav de íconos-->
+                       <ul class="nav nav-tabs">
+                               <li class="nav-item">
+                                 <div class="nav-link">Post:</div>
+                               </li>
+                               
+                               
+                               <li class="nav-item">
+                                       <a class="nav-link" href="#" id="click-evento"><i class="fas fa-calendar-alt icon-custom"></i>Eventos</a>
+                                     </li>
+                               
+                             </ul>
+                       </div> <!--Fin del nav de íconos-->
+                      
+                        <!--Publicaciones recientes realizadas por el instructor, totalmente dinámicas-->
+       
+                       <!--En esta sección del código aparecen las publicaciones realizadas por el instructor-->
+                       <div>
+                               <table>
+                                       <tr>
+                                           <td rowspan="2"><img src="img/edit-profile/picture1.png"></td>
+                                           <td><div class="encabezado-pub-estudiante">Nombre instructor: nombre curso</div></td>
+                                       </tr>
+                                       <tr>
+                                           <td class="contenido-pub-instructor">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</td>
+                                       </tr>
+                                   </table>
+                                   
+                                   
+       
+       
+                       </div>
+                       <div id="publicacion"> <!--Esto no se modificará es la información de Bienvenida, se encontrará en duro-->
+                           <table>
+                               <tr>
+                                   <td rowspan="2"><img src="img/schoology-logo (1) (1).png"></td>
+                                   <td><div id="encabezado-publicacion">Bienvenid@ a Schoology Nombre Estudiante</div></td>
+                               </tr>
+                               <tr>
+                                   <td id="contenido-publicacion">Aquí hay algunas cosas que puede hacer para comenzar:<br>
+                                           <a href="#">Lea nuestra empresa Blog</a><br>
+                                           <a href="#">Guía de ayuda</a></td>
+                               </tr>
+                           </table>
+                       </div>
+       
+                       
+                       
+       
+                   
+               </div> <!--Fin del div principal-->
+
+               <!--Asignaciones realizadas por el instructor en el curso al que el estudiante pertenece-->
+
+               <div class="form-control invitacion-colegas">
+                    <div id="proximo" style="float:left; margin-top: 5px">Proximo</div>
+                    
+                    <div class="contenido-interno-asignaciones">
+                        <div class="contenedor-anclaje-asignaciones"><a href="#"><i class="fas fa-file-signature icon-custom-2"></i>Nombre de la asignaciones</a></div>
+                       <div class="footer-asignaciones">Hora</div> <!--Dato que se tomará del formulario de creación de eventos-->
+                       <div class="footer-asignaciones">Fecha</div> <!--Dato que se tomará del formulario de creación de eventos-->
+                    </div>
+
+                    <div class="contenido-interno-asignaciones">
+                            <div class="contenedor-anclaje-asignaciones"><a href="#"><i class="fas fa-file-signature icon-custom-2"></i>Nombre de la asignaciones</a></div>
+                           <div class="footer-asignaciones">Hora</div> <!--Dato que se tomará del formulario de creación de eventos-->
+                           <div class="footer-asignaciones">Fecha</div> <!--Dato que se tomará del formulario de creación de eventos-->
+                        </div>
+
+                    
+
+
+
+        
+                </div> <!--Fin del div de asignaciones y eventos-->
+                
+        
+
+       
+
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/controlador-instructor.js"></script> 
+</body>
+</html>
