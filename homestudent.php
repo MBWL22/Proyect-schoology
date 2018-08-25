@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Diana Sánchez</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <script src="fontAwesone/js/all.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilos-navbar-oficial.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    <header>
+        <div id="menu-titular">
+            <a id="anclaje-boton" href="" style="float: right">
+                <i class="fas fa-bars"></i>
+            </a>
+           <div class="s">Schoology</div>
+           <div> 
+                <a href="#"><div class="icon-o" ><i class="fas fa-search colorY" style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="icon-o"><i class="fas fa-angle-double-down colorY"style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="icon-o"><i class="far fa-calendar-alt colorY"style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="icon-o"><i class="far fa-envelope colorY"style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="icon-o"><i class="far fa-bell colorY"style="color: white; width: 25px; height: 25px;"></i></div></a>
+            </div>
+        </div>
+        
+        <div id="navbar-contenedor">
+                <a href="" class="a-not"><div id="div-imagen"><img src="img/logo.png"></a></div>
+                <a href="" class="a-not"><div class="posicion-interna">COURSES</div></a>
+                <a href="" class="a-not"><div class="posicion-interna">GROUPS</div></a>
+                <a href="" class="a-not"><div class="posicion-interna">RESOURCES</div></a>
+                <a href="" class="a-not"><div class="posicion-interna">GRADES</div></a>
+               
+            <div id="div-iconos" style="float: right">
+                    <div class="dropdown" style="float: right">
+                            <button id="btn-dropdown" class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Nombre Estudiante
+                            </button>
+                            <div id="dropdown-interno" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item estilo-anchor" href="#">Your Profile</a>
+                              <a class="dropdown-item estilo-anchor" href="#">University</a>
+                              <a class="dropdown-item estilo-anchor" href="#">Settings</a>
+                              <a class="dropdown-item estilo-anchor" href="#">Subscriptions</a>
+                              <hr style="border: solid 0.5px; color: white">
+                              <a class="dropdown-item estilo-anchor" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                            </div>
+                        </div>
+                <a href="#"><div class="p-interna-derecha"><i class="fas fa-search" style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="p-interna-derecha"><i class="fas fa-angle-double-down"style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="p-interna-derecha"><i class="far fa-calendar-alt"style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="p-interna-derecha"><i class="far fa-envelope"style="color: white; width: 25px; height: 25px;"></i></div></a>
+                <a href="#"><div class="p-interna-derecha"><i class="far fa-bell"style="color: white; width: 25px; height: 25px;"></i></div></a>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+    
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>  
+</body>
+</html>

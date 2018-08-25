@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Login to Schoology</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon.ico">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/login-estilos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">  
+</head>
+<body>
+    <header id="encabezado"> <a href="index.html"> <img src="img/logo.png"></a></header>
+    <div id="contenedor-padre" class="form-control">
+            <div id="contenedor-hijo" class="form-control">
+               
+                <label id="titulo">Sign to Schoology</label><br>
+                <div id="div-error-login"></div>
+                <div id="cont-email"><input type="text" placeholder="Email or Username" class="input-tamaño form-control" autofocus id="user-email-login"><br></div>
+                <div id="cont-password"><input type="password" placeholder="Password" class="input-tamaño form-control" id="password-login"><br></div>
+                <div id="contenedor-btn-login"><button id="style-b" type="button" class="btn btn-info" >Log In</button>
+                <table style="float: right; text-align: right">
+                    <tr><td><a class="a-forgot" href="">Forgot your password?</a></tr>
+                        <tr><td><a class="a-forgot" href="">SSO login</a></td></tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <footer id="pie-pagina">Schoology © 2018 ·  <a href="" id="f-enlace-1">Privacy policy</a> · <a href="" id="f-enlace-2">Terms of Use</a> · <a href="" id="f-enlace-3">Help Center</a></footer>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/controlador.js"></script>
+   
+</body>
+</html>
