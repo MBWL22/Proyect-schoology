@@ -7,88 +7,100 @@
         $respuesta["codigo"]= 0;
         $respuesta["mensaje"]= "Debe seleccionar un grupo o Curso";
         echo json_encode($respuesta);
-    }else if($_POST["cursoUpdate"]!="Ninguno" && $_POST["grupoUpdate"]=="Ninguno"){
-        $archivo = fopen("../data/update.json","a+");
-        $update =array();
-        $update["nombre"]= $_SESSION["nombre"];
-        $update["tipoUsuario"]= $_SESSION["tipoUsuario"];
-        $update["apellido"] = $_SESSION["apellido"];
-        $update["postUpdate"] = $_POST["postUpdate"];
-        $update["emailUsuario"]=$_SESSION["emailUsuario"];
+    }else if($_POST["cursoEvento"]!="Ninguno" && $_POST["grupoEvento"]=="Ninguno"){
+        $archivo = fopen("../data/eventos.json","a+");
+        $evento =array();
+        $evento["nombre"]= $_SESSION["nombre"];
+        $evento["tipoUsuario"]= $_SESSION["tipoUsuario"];
+        $evento["apellido"] = $_SESSION["apellido"];
+        $evento["descripEvento"] = $_POST["descripEvento"];
+        $evento["tituloEvento"] = $_POST["tituloEvento"];
+        $evento["nombreEvento"] = $_POST["nombreEvento"];
+        $evento["fechaEvento"] = $_POST["fechaEvento"];
+        $evento["emailUsuario"]=$_SESSION["emailUsuario"];
         $archivoCursos = fopen("../data/cursos.json","r");
         while(($linea1 = fgets($archivoCursos))){
             $registro = json_decode($linea1,true);
-          if($_POST["cursoUpdate"]==$registro["nameCourse"]){  
-            $update["accessCodeCourse"]=$registro["accessCodeCourse"];
-            $update["nameCourse"]=$registro["nameCourse"];
+          if($_POST["cursoEvento"]==$registro["nameCourse"]){  
+            $evento["accessCodeCourse"]=$registro["accessCodeCourse"];
+            $evento["nameCourse"]=$registro["nameCourse"];
             break;
             }
         }
-        fwrite($archivo, json_encode($update)."\n");
-        echo json_encode($update);
+        fwrite($archivo, json_encode($evento)."\n");
+        echo json_encode($evento);
         fclose($archivoCursos); 
         fclose($archivo);
-    }elseif($_POST["cursoUpdate"]=="Ninguno" && $_POST["grupoUpdate"]!="Ninguno"){
-        $archivo = fopen("../data/update.json","a+");
-        $update =array();
-        $update["nombre"]= $_SESSION["nombre"];
-        $update["tipoUsuario"]= $_SESSION["tipoUsuario"];
-        $update["apellido"] = $_SESSION["apellido"];
-        $update["postUpdate"] = $_POST["postUpdate"];
-        $update["emailUsuario"]=$_SESSION["emailUsuario"];
-        $archivoGrupos = fopen("../data/grupos.json","r");
-        while(($linea2 = fgets($archivoGrupos))){
-            $registro = json_decode($linea2,true);
-          if($_POST["grupoUpdate"]==$registro["nameGrupo"]){  
-            $update["accessCodeGrupo"]=$registro["accessCodeGrupo"];
-            $update["nameGrupo"]=$registro["nameGrupo"];
-            fclose($archivoGrupos);
-            fwrite($archivo, json_encode($update)."\n");
-            fclose($archivo);
-            echo json_encode($update);
-            break;
-            }
-        }
-    }else{
-        $archivo = fopen("../data/update.json","a+");
-        $update1 =array();
-        $update1["nombre"]= $_SESSION["nombre"];
-        $update1["tipoUsuario"]= $_SESSION["tipoUsuario"];
-        $update1["apellido"] = $_SESSION["apellido"];
-        $update1["postUpdate"] = $_POST["postUpdate"];
-        $update1["emailUsuario"]=$_SESSION["emailUsuario"];
-        $archivoGrupos = fopen("../data/grupos.json","r");
+    }elseif($_POST["cursoEvento"]=="Ninguno" && $_POST["grupoEvento"]!="Ninguno"){
+        $archivo = fopen("../data/eventos.json","a+");
+        $evento =array();
+        $evento["nombre"]= $_SESSION["nombre"];
+        $evento["tipoUsuario"]= $_SESSION["tipoUsuario"];
+        $evento["apellido"] = $_SESSION["apellido"];
+        $evento["descripEvento"] = $_POST["descripEvento"];
+        $evento["tituloEvento"] = $_POST["tituloEvento"];
+        $evento["nombreEvento"] = $_POST["nombreEvento"];
+        $evento["fechaEvento"] = $_POST["fechaEvento"];
+        $evento["emailUsuario"]=$_SESSION["emailUsuario"];
+        $archivoCursos = fopen("../data/grupos.json","r");
         while(($linea1 = fgets($archivoGrupos))){
             $registro = json_decode($linea1,true);
-          if($_POST["grupoUpdate"]==$registro["nameGrupo"]){  
-            $update1["accessCodeGrupo"]=$registro["accessCodeGrupo"];
-            $update1["nameGrupo"]=$registro["nameGrupo"];
-            fclose($archivoGrupos);
-            fwrite($archivo, json_encode($update1)."\n");
-            echo json_encode($update1);
+          if($_POST["grupoEvento"]==$registro["nameGrupo"]){  
+            $evento["accessCodeGrupo"]=$registro["accessCodeGrupo"];
+            $evento["nameGrupo"]=$registro["nameGrupo"];
             break;
             }
         }
-
-        $update =array();
-        $update["nombre"]= $_SESSION["nombre"];
-        $update["tipoUsuario"]= $_SESSION["tipoUsuario"];
-        $update["apellido"] = $_SESSION["apellido"];
-        $update["postUpdate"] = $_POST["postUpdate"];
-        $update["emailUsuario"]=$_SESSION["emailUsuario"];
+        fwrite($archivo, json_encode($evento)."\n");
+        echo json_encode($evento);
+        fclose($archivoGrupos); 
+        fclose($archivo);
+    }else{
+        $archivo = fopen("../data/eventos.json","a+");
+        $evento =array();
+        $evento["nombre"]= $_SESSION["nombre"];
+        $evento["tipoUsuario"]= $_SESSION["tipoUsuario"];
+        $evento["apellido"] = $_SESSION["apellido"];
+        $evento["descripEvento"] = $_POST["descripEvento"];
+        $evento["tituloEvento"] = $_POST["tituloEvento"];
+        $evento["nombreEvento"] = $_POST["nombreEvento"];
+        $evento["fechaEvento"] = $_POST["fechaEvento"];
+        $evento["emailUsuario"]=$_SESSION["emailUsuario"];
         $archivoCursos = fopen("../data/cursos.json","r");
-        while(($linea2 = fgets($archivoCursos))){
-            $registro = json_decode($linea2,true);
-          if($_POST["cursoUpdate"]==$registro["nameCourse"]){  
-            $update["accessCodeCourse"]=$registro["accessCodeCourse"];
-            $update["nameCourse"]=$registro["nameCourse"];
-            fclose($archivoCursos);
-            fwrite($archivo, json_encode($update)."\n");
-            fclose($archivo);
-            echo json_encode($update);
+        while(($linea1 = fgets($archivoCursos))){
+            $registro = json_decode($linea1,true);
+          if($_POST["cursoEvento"]==$registro["nameCourse"]){  
+            $evento["accessCodeCourse"]=$registro["accessCodeCourse"];
+            $evento["nameCourse"]=$registro["nameCourse"];
             break;
             }
         }
+        fwrite($archivo, json_encode($evento)."\n");
+        echo json_encode($evento);
+        fclose($archivoCursos); 
+
+        $evento =array();
+        $evento["nombre"]= $_SESSION["nombre"];
+        $evento["tipoUsuario"]= $_SESSION["tipoUsuario"];
+        $evento["apellido"] = $_SESSION["apellido"];
+        $evento["descripEvento"] = $_POST["descripEvento"];
+        $evento["tituloEvento"] = $_POST["tituloEvento"];
+        $evento["nombreEvento"] = $_POST["nombreEvento"];
+        $evento["fechaEvento"] = $_POST["fechaEvento"];
+        $evento["emailUsuario"]=$_SESSION["emailUsuario"];
+        $archivoCursos = fopen("../data/grupos.json","r");
+        while(($linea2 = fgets($archivoGrupos))){
+            $registro = json_decode($linea2,true);
+          if($_POST["grupoEvento"]==$registro["nameGrupo"]){  
+            $evento["accessCodeGrupo"]=$registro["accessCodeGrupo"];
+            $evento["nameGrupo"]=$registro["nameGrupo"];
+            break;
+            }
+        }
+        fwrite($archivo, json_encode($evento)."\n");
+        echo json_encode($evento);
+        fclose($archivoGrupos); 
+        fclose($archivo);
 
     }
 
