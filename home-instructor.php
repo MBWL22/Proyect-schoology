@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cursos | Schoology</title>
+    <title>Home | Schoology</title>
     <link rel="shortcut icon" href="img/favicon_0.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
@@ -32,7 +32,7 @@
       </div>
       
       <div id="navbar-contenedor">
-              <a href="" class="a-not"><div id="div-imagen"><img src="img/logo.png"></a></div>
+              <a href="#" class="a-not"><div id="div-imagen"><img src="img/logo.png"></a></div>
               <div class="posicion-interna">UPGRADE</div>
               <div class="posicion-interna"  id="click-course">COURSES</div>
               <div class="posicion-interna"  id="click-group">GROUPS</div>
@@ -44,7 +44,7 @@
                           </button>
                           <div id="dropdown-interno" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item estilo-anchor" href="#">Your Profile</a>
-                            <a class="dropdown-item estilo-anchor" href="#">user school</a>
+                            <a class="dropdown-item estilo-anchor" href="#">UNAH</a>
                             <a class="dropdown-item estilo-anchor" href="#">Settings</a>
                             <hr style="border: solid 0.5px; color: white">
                             <a class="dropdown-item estilo-anchor" href="logout.php">Logout</a>
@@ -64,7 +64,15 @@
     <div id="pantalla-ningun-curso" > <!--Inicio de pantalla cuando no existe ningún curso-->
       <div id="contenedor-principal" class="form-control">
             <div id="titulo-curso">Courses</div>
-            <div id="anclaje-cursos"><a href="#">My Courses</a></div>
+            <div id="anclaje-cursos"><a href="#">My Courses</a></div><br>
+            <div style="float: right; margin-right: 5px;" >
+              <select style="font-size:12px; color:brown;" id="selec-ingresar-curso">
+              <option>seleccione curso</option>
+              </select>
+              <button id="btn-ingresar-curso" type="button">ingresar</button>
+              <div id="error-ingresar-curso"></div>
+            </div>
+
           <div id="contenido-central">
             <!--  <label id="lbl-contenido">You are not currently enrolled in any courses</label><br>
                 <div id="imagen"><img src="img/cometa-curso.PNG"></div>
@@ -162,7 +170,8 @@
     <div id="pantalla-ningun-grupo"> <!--Inicio de pantalla cuando no existe ningún grupo-->
         <div id="contenedor-principal" class="form-control">
             <div id="titulo-curso">Groups</div>
-            <div id="anclaje-cursos"><a href="#">My Groups</a></div>
+            <div id="anclaje-cursos"><a href="#">My Groups </a></div>
+            
             <div id="contenido-central-grupo">
             <!--    <label id="lbl-contenido">You are not currently enrolled in any groups</label><br>
                 <div id="imagen"><img src="img/cometa-curso.PNG"></div>
@@ -443,14 +452,14 @@
                         <textarea id="area-crear-evento"></textarea><br>
                    
                     <label class="titulos-asignacion">Cuando</label><br>
-                        <input type="date"><br>
+                        <input type="date" id="fecha-evento"><br>
                     
                         
                     <label class="titulos-asignacion">Enviar a:</label>
                     <div><button style="width: 100px" data-toggle="modal" data-target="#realizar-busqueda-2" class="btn btn-warning" ><i class="fas fa-search"></i></button></div>
 
                     <!--Ventana modal de búsqueda-->
-               <!--   <div class="modal fade" id="realizar-busqueda-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="realizar-busqueda-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
                             <div class="modal-header">
@@ -464,16 +473,16 @@
                                 <tr>
                                   <td><div class="estilo-modal"> <i class="fas fa-book-open icon-custom-3"></i>Cursos:</div></td>
                                   <td>
-                                      <select class="estilo-interno" id="selec-cursos-ins">
-                                      <option value="opt-cursos">Ninguno</option>
+                                      <select class="estilo-interno" id="selec-cursos-even">
+                                       <option>Ninguno</option>
                                       </select>
                                  </td>
                                 </tr>
                                 <tr>
                                     <td><div class="estilo-modal"><i class="fas fa-users icon-custom-3"></i>Grupos:</div></td>
                                     <td>
-                                        <select class="estilo-interno" id="selec-grupos-ins">
-                                        <option value="opt-cursos">Ninguno</option>
+                                        <select class="estilo-interno" id="selec-grupos-even">
+                                        <option>Ninguno</option>
                                         </select>
                                     </td>
                                   </tr>
@@ -483,15 +492,15 @@
                           
                             <div class="modal-footer">
                               
-                                  <button style="text-align: center" type="button"  data-dismiss="modal" id="btn-create">Seleccione</button>
+                                  <button style="text-align: center" type="button"  data-dismiss="modal" id="btn-seleccionar-even">Seleccione</button>
                                   <button type="button" id="btn-cancel" data-dismiss="modal">Cancelar</button>
                             </div>
                           </div>
                         </div>
-                      </div>-->
+                      </div>
                       <!--Fin ventana modal-->
 
-                    <div id="btn-crear-evento"><input  type="button" value="crear" class="btn btn-primary"></div>
+                    <div id="btn-crear-evento"><input  type="button" value="crear" class="btn btn-primary" id="btn-crear-even"></div>
                   </div> <!--Fin del contenido central para crear eventos-->
               
                 
@@ -517,9 +526,14 @@
             
         </div>
         <!--En este div se maneja la información que se postea al dar click en ASIGNACIONES O EVENTOS-->
-        <div class="form-control invitacion-colegas" id="panel-eventos-tareas">
+        <div class="form-control invitacion-colegas" id="panel-tareas">
            
-        </div> <!--Fin del div asignación o evento-->
+        </div> 
+
+        <div class="form-control invitacion-colegas" id="panel-eventos">
+           
+        </div> 
+        <!--Fin del div asignación o evento-->
 
 
 
@@ -546,5 +560,6 @@
       <script src="js/bootstrap.bundle.min.js"></script>
       <script src="js/bootstrap.min.js"></script>
       <script src="js/controlador-instructor.js"></script>
+      <script src="js/controlador.js"></script>
 </body>
 </html>
