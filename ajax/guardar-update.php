@@ -3,6 +3,7 @@
     session_start(); 
     $linea1="";
     $linea2="";
+    if($_SESSION["tipoUsuario"]=="instructor"){
     if($_POST["cursoUpdate"]=="Ninguno" && $_POST["grupoUpdate"]=="Ninguno"){
         $respuesta["codigo"]= 0;
         $respuesta["mensaje"]= "Debe seleccionar un grupo o Curso";
@@ -91,7 +92,30 @@
         }
 
     }
+    }else{
+        $archivo = fopen("../data/update.json","a+");
+        $update =array();
+        $update["nombre"]= $_SESSION["nombre"];
+        $update["tipoUsuario"]= $_SESSION["tipoUsuario"];
+        $update["apellido"] = $_SESSION["apellido"];
+        $update["postUpdate"] = $_POST["postUpdate"];
+        $update["emailUsuario"]=$_SESSION["emailUsuario"];
+        $update["accessCodeCourse"]=$_SESSION["accessCodeCourse"];
 
+        $archivoCursos = fopen("../data/cursos.json","r");
+        while(($linea1 = fgets($archivoCursos))){
+            $registro = json_decode($linea1,true);
+          if($update["accessCodeCourse"]==$registro["accessCodeCourse"]){  
+            $update["nameCourse"]=$registro["nameCourse"];
+            break;
+            }
+        }
+        fwrite($archivo, json_encode($update)."\n");
+        echo json_encode($update);
+        fclose($archivoCursos); 
+        fclose($archivo);
+
+    }
 
     
     //var_dump($usuarios);

@@ -2,9 +2,8 @@
     session_start();
     $archivo = fopen("../data/update.json","r");
     $linea="";
-    $linea1="";
     $update=array();
-    
+    if($_SESSION["tipoUsuario"]=="instructor"){
     while(($linea = fgets($archivo))){
         $registro = json_decode($linea,true);
         if($_SESSION["emailUsuario"]==$registro["emailUsuario"]){  
@@ -12,15 +11,17 @@
            
         }
       }
-     /* fclose($archivo);
-      for ($i=0;i<count($update);$i++){
+    }else{
         while(($linea = fgets($archivo))){
             $registro = json_decode($linea,true);
-            if($update[$i]["accesCodeGrupo"]==$registro["accesCodeGrupo"] || $update[$i]["accesCodeCourse"]==$registro["accesCodeCourse"]){ 
-               $update[]=$registro; 
+            if($_SESSION["accessCodeCourse"]==$registro["accessCodeCourse"]){  
+             $update[] = $registro;
             }
-          }  
-      }*/
+          }
+       }
+
+
+
     if(!empty($update)){
         echo json_encode($update);
     }else{

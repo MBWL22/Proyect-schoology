@@ -4,6 +4,7 @@
     $linea="";
     $cursos=array();
     $archivo1="../data/cursos.json";
+    if($_SESSION["tipoUsuario"]=="instructor"){
     if(filesize($archivo1)>0){
     while(($linea = fgets($archivo))){
         $registro = json_decode($linea,true);
@@ -12,7 +13,14 @@
         }
       }
     }
-
+   }else{
+    while(($linea = fgets($archivo))){
+        $registro = json_decode($linea,true);
+        if($_SESSION["accessCodeCourse"]==$registro["accessCodeCourse"]){  
+         $cursos[] = $registro;
+        }
+      }
+   }
 
     if(!empty($cursos)){
         echo json_encode($cursos);

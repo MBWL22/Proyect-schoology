@@ -3,13 +3,21 @@
     $archivo = fopen("../data/tareas.json","r");
     $linea="";
     $tareas=array();
-    
+    if($_SESSION["tipoUsuario"]=="instructor"){
     while(($linea = fgets($archivo))){
         $registro = json_decode($linea,true);
         if($_SESSION["emailUsuario"]==$registro["emailUsuario"]){  
            $tareas[]=$registro; 
         }
     }
+}else{
+    while(($linea = fgets($archivo))){
+        $registro = json_decode($linea,true);
+        if($_SESSION["accessCodeCourse"]==$registro["accessCodeCourse"]){  
+         $tareas[] = $registro;
+        }
+      }
+   }
 
     if(!empty($tareas)){
         echo json_encode($tareas);

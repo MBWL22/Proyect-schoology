@@ -12,7 +12,7 @@
         break;
         }
       }
-    if($_POST["emailUsuario"]!=$registro["emailUsuario"]){  
+    if($_POST["emailUsuario"]!=$registro["emailUsuario"] && $_POST["tipoUsuario"]=="instructor"){  
       $_SESSION["emailUsuario"] = $_POST["emailUsuario"];
       $_SESSION["nombre"] = $_POST["nombre"];
       $_SESSION["apellido"] = $_POST["apellido"];
@@ -23,6 +23,30 @@
       $respuesta["codigo"]= 1;
       $respuesta["mensaje"]= "Registro guardado exitosamente";
       echo json_encode($respuesta);
+
+    }else if($_POST["emailUsuario"]!=$registro["emailUsuario"] && $_POST["tipoUsuario"]=="estudiante"){
+      $_SESSION["emailUsuario"] = $_POST["emailUsuario"];
+      $_SESSION["nombre"] = $_POST["nombre"];
+      $_SESSION["apellido"] = $_POST["apellido"];
+      $_SESSION["password"] = $_POST["password"];
+      $_SESSION["tipoUsuario"] = $_POST["tipoUsuario"];
+      $_SESSION["accessCodeCourse"] =$_SESSION["accessCodeCourse"];
+
+      $student=array();
+      $student["emailUsuario"] = $_POST["emailUsuario"];
+      $student["nombre"] = $_POST["nombre"];
+      $student["apellido"] = $_POST["apellido"];
+      $student["password"] = $_POST["password"];
+      $student["tipoUsuario"] = $_POST["tipoUsuario"];
+      $student["accessCodeCourse"] =$_SESSION["accessCodeCourse"];
+
+     
+      fwrite($archivo, json_encode($student) . "\n");
+      fclose($archivo);
+      $respuesta["codigo"]= 1;
+      $respuesta["mensaje"]= "Registro guardado exitosamente";
+      echo json_encode($respuesta);
     }
+
 ?>
  

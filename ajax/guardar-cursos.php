@@ -32,4 +32,5 @@
       $respuesta["mensaje"]= "Curso creado exitosamente";
       echo json_encode($respuesta);
     }
+    
 ?> 
